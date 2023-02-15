@@ -1,1 +1,0 @@
-# kmla-equipments-front
