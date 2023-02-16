@@ -9,14 +9,12 @@ const Detail = () => {
     axios
       .get(`http://localhost:8800/api/equip/${id}`)
       .then((res) => {
-        console.log(res);
         setEquip(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, [equip]);
-  console.log(equip);
   /*
   const comments = equip.comments.map((comment) => {
     <h2>{comment}</h2>;
@@ -27,7 +25,9 @@ const Detail = () => {
       <h1>Type: {equip.type}</h1>
       <h1>Status: {equip.status}</h1>
       <h1>Place: {equip.place}</h1>
-
+      <div>
+        <p>Description: {equip.description}</p>
+      </div>
     </div>
   );
 };

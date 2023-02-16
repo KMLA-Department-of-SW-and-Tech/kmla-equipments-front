@@ -14,7 +14,16 @@ const UploadItem = () => {
 
   useEffect(() => {}, [type]);
 
-  useEffect(() => {}, [status]);
+  useEffect(() => {
+    if (status === "available") {
+      setStatus("대여 가능");
+    } else if (status === "fix") {
+      setStatus("수리중");
+    } else if (status === "contact") {
+      setStatus("개별 연락 요망");
+    }
+    console.log(status);
+  }, [status]);
 
   useEffect(() => {}, [location]);
 
@@ -29,6 +38,10 @@ const UploadItem = () => {
 
     if (description === "") {
       setDescription("설명 없음");
+    }
+    if (name === "" || type === "" || status === "" || location === "") {
+      alert("빈칸을 모두 채워주세요.");
+      return;
     }
     axios
       .post("http://localhost:8800/api/equip", {
@@ -70,14 +83,21 @@ const UploadItem = () => {
             setType(e.target.value);
           }}
         ></input>
-        <input
-          type="text"
-          placeholder="물건 상태"
+        <select
+          name="cars"
           className="detail"
-          onChange={(e) => {
-            setStatus(e.target.value);
+          onChange={() => {
+            setStatus(document.querySelector("select").value);
           }}
-        ></input>
+          required
+        >
+          <option value="" disabled selected>
+            물건 상태
+          </option>
+          <option value="available">대여 가능</option>
+          <option value="fix">수리중</option>
+          <option value="contact">개별 연락 요망</option>
+        </select>
         <input
           type="text"
           placeholder="물건 위치"

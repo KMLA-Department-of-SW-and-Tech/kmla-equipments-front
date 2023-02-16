@@ -84,3 +84,11 @@ td {
   justify-content: center;
   display: flex;
 }
+
+.nav-button {
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1.2em;
+  margin-left: 10px;
+}
