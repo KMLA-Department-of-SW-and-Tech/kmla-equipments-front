@@ -24,7 +24,9 @@ const Main = () => {
         if (equipment.whoRegistered === decoded._id) {
           return (
             <tr>
-              <td>{equipment.name}</td>
+              <td onClick={() => {
+                window.location.href = `/detail/${equipment._id}`
+              }}>{equipment.name}</td>
               <td>{equipment.type}</td>
               <td>{equipment.status}</td>
               <td>{equipment.place}</td>

@@ -7,6 +7,7 @@ import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import UploadItem from "./pages/Admin/UploadItem";
+import Detail from "./pages/Detail";
 
 const App = () => {
   const token = localStorage.getItem("token");
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/admin/uploaditem" element={<UploadItem />} />
+            <Route path="/detail/:id" element={<Detail />} />
           </Routes>
         </BrowserRouter>
       );
@@ -52,6 +54,7 @@ const App = () => {
             <Route path="*" element={<Main />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/detail/:id" element={<Detail />} />
           </Routes>
         </BrowserRouter>
       );
