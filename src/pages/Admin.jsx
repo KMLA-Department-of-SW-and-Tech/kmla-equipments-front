@@ -3,10 +3,6 @@ import React from "react";
 import "./Admin.css";
 
 const Admin = () => {
-  if (localStorage.getItem("isAdmin") === "false") {
-    window.location.href = "/";
-  }
-
   return (
     <>
       <div className="title">

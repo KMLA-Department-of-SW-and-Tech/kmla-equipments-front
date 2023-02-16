@@ -21,6 +21,12 @@ const UploadItem = () => {
   useEffect(() => {}, [description]);
 
   const onClickUpload = () => {
+    const isAdmin = localStorage.getItem("isAdmin");
+    if (isAdmin === "false") {
+      alert("관리자만 접근 가능합니다.");
+      window.location.href = "/";
+    }
+
     if (description === "") {
       setDescription("설명 없음");
     }
@@ -29,7 +35,7 @@ const UploadItem = () => {
         name: name,
         type: type,
         status: status,
-        location: location,
+        place: location,
         description: description,
       })
       .then((res) => {
