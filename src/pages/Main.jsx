@@ -36,9 +36,27 @@ const Main = () => {
               >
                 {equipment.name}
               </td>
-              <td>{equipment.type}</td>
-              <td>{equipment.status}</td>
-              <td>{equipment.place}</td>
+              <td
+                onClick={() => {
+                  window.location.href = `/detail/${equipment._id}`;
+                }}
+              >
+                {equipment.type}
+              </td>
+              <td
+                onClick={() => {
+                  window.location.href = `/detail/${equipment._id}`;
+                }}
+              >
+                {equipment.status}
+              </td>
+              <td
+                onClick={() => {
+                  window.location.href = `/detail/${equipment._id}`;
+                }}
+              >
+                {equipment.place}
+              </td>
               <td>
                 <button
                   className="equip-button"
@@ -91,11 +109,41 @@ const Main = () => {
             >
               {equipment.name}
             </td>
-            <td>{equipment.type}</td>
-            <td>{equipment.status}</td>
-            <td>{equipment.place}</td>
-            <td>대여불가</td>
-            <td>{equipment.registerName}</td>
+            <td
+              onClick={() => {
+                window.location.href = `/detail/${equipment._id}`;
+              }}
+            >
+              {equipment.type}
+            </td>
+            <td
+              onClick={() => {
+                window.location.href = `/detail/${equipment._id}`;
+              }}
+            >
+              {equipment.status}
+            </td>
+            <td
+              onClick={() => {
+                window.location.href = `/detail/${equipment._id}`;
+              }}
+            >
+              {equipment.place}
+            </td>
+            <td
+              onClick={() => {
+                window.location.href = `/detail/${equipment._id}`;
+              }}
+            >
+              대여불가
+            </td>
+            <td
+              onClick={() => {
+                window.location.href = `/detail/${equipment._id}`;
+              }}
+            >
+              {equipment.registerName}
+            </td>
           </tr>
         );
       } else {
@@ -108,9 +156,27 @@ const Main = () => {
             >
               {equipment.name}
             </td>
-            <td>{equipment.type}</td>
-            <td>{equipment.status}</td>
-            <td>{equipment.place}</td>
+            <td
+              onClick={() => {
+                window.location.href = `/detail/${equipment._id}`;
+              }}
+            >
+              {equipment.type}
+            </td>
+            <td
+              onClick={() => {
+                window.location.href = `/detail/${equipment._id}`;
+              }}
+            >
+              {equipment.status}
+            </td>
+            <td
+              onClick={() => {
+                window.location.href = `/detail/${equipment._id}`;
+              }}
+            >
+              {equipment.place}
+            </td>
             <td>
               <button
                 className="equip-button"
@@ -140,7 +206,13 @@ const Main = () => {
                 신청하기
               </button>
             </td>
-            <td>{equipment.registerName}</td>
+            <td
+              onClick={() => {
+                window.location.href = `/detail/${equipment._id}`;
+              }}
+            >
+              {equipment.registerName}
+            </td>
           </tr>
         );
       }
@@ -201,7 +273,7 @@ const Main = () => {
   return (
     <>
       <div className="title">
-        <h1>KMLA Equipments</h1>
+        <h1>🏦 큼라창고 🏦</h1>
         <p>민사고 융합프로젝트 장비 대여 시스템</p>
       </div>
       <div className="main">
@@ -209,14 +281,14 @@ const Main = () => {
           <input type="text" placeholder="검색하기" className="search"></input>
           <button className="search-button">검색하기</button>
         </div>
-        <h4>장비 이름을 클릭하면 상세 정보를 확인할 수 있습니다.</h4>
+        <h4>장비 항목을 클릭하면 상세 정보를 확인할 수 있습니다.</h4>
         <div className="equip-list">
           <table>
             <thead>
               <tr>
-                <th>장비 이름</th>
-                <th>장비 종류</th>
-                <th>장비 상태</th>
+                <th className="equip-name">장비 이름</th>
+                <th className="equip-type">장비 종류</th>
+                <th className="equip-status">장비 상태</th>
                 <th>장비 위치</th>
                 <th>신청하기</th>
                 <th>신청자</th>

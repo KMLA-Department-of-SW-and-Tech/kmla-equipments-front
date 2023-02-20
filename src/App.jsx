@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
+import './App.css';
+
 import Main from "./pages/Main";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
