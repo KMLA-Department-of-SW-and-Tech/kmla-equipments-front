@@ -23,7 +23,7 @@ const Main = () => {
     .slice(page * 10, page * 10 + 10)
     .map((equipment) => {
       if (equipment.registerName === "Not Registered") {
-        equipment.registerName = "";
+        equipment.registerName = "-";
       }
       if (equipment.status === "대여중") {
         if (equipment.whoRegistered === decoded._id) {
@@ -283,7 +283,7 @@ const Main = () => {
         </div>
         <h4>장비 항목을 클릭하면 상세 정보를 확인할 수 있습니다.</h4>
         <div className="equip-list">
-          <table>
+          <table className="table">
             <thead>
               <tr>
                 <th className="equip-name">장비 이름</th>
